@@ -1,5 +1,6 @@
 <script>
 	import Recipe from './Recipe.svelte'
+	import { url } from '@roxi/routify'
 </script>
 
 <main>
@@ -8,6 +9,7 @@
 	</div>
 	<body>
 		<div>
+			<a href={$url('./vomb')}>VoorbeeldLink</a>
 			<Recipe
 				header={"Snack: Madison Beer"}
 				body={"Een kanker boeiend verhaal over madison beer... Grapje ze is gewoon lekker"}
