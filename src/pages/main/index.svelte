@@ -3,11 +3,11 @@
 	import { url } from '@roxi/routify'
 </script>
 
-<main>
+<body>
 	<div class="header">
 		<h1>VOMB</h1>
 	</div>
-	<body>
+	<div class="main">
 		<div>
 			<a href={$url('./vomb')}>VoorbeeldLink</a>
 			<Recipe
@@ -30,31 +30,31 @@
 				src={"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2020-11-17-at-12-58-32-pm-1605639574.png"}
 			/>
 		</div>
-	</body>
-</main>
+	</div>
+</body>
 
 <style>
+	body {
+		box-sizing: border-box;
+	}
+
 	.header {
-		background-color: #6dff79c4 ;
+		background-color: #D0585890 ;
 		padding: 30px;
 		text-align: center;
 		color: antiquewhite;
 	}
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+
+	.main {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
 	}
+
 	h1 {
-		color: #ff3e00;
+		color: #F7F7F7;
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
-	}
-	@media (min-width: 640px) {
-		main {
-			max-width: 600px;
-		}
 	}
 </style>

@@ -1,28 +1,55 @@
 <script>
-    import Img from "svelte-img";
     export let header;
     export let body;
     export let src;
 </script>
 
-<div>
-    <header>
-        {header}
-    </header>
-    <div>
-        {body}
+<body>
+    <div class="recipe">
+        <img src={src} alt={"Pog"} width="500" height="500" style="margin: 10px;"/>
+        <div class="text">
+            <div class="title">
+                {header}
+            </div>
+            <div>
+                {body}
+            </div>
+        </div>
     </div>
-    <Img src={src}/>
-</div>
+</body>
 
 <style>
-    div {
-        margin: 10px
+    body {
+        box-sizing: border-box;
+        display: flex;
     }
-    header {
-		color: #ff3e00;
+
+    .recipe {
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: #D0585890;
+        border-style: solid;
+        width: 75vw;
+    }
+
+    .title {
 		text-transform: uppercase;
 		font-size: 1em;
 		font-weight: 100;
 	}
+
+    .text {
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    @media (max-width: 700px) {
+        .recipe {
+            flex-direction: column;
+        }
+    }
 </style>
