@@ -4,9 +4,8 @@
     export let src;
 </script>
 
-<body>
-    <div class="recipe">
-        <img src={src} alt={"Pog"} width="500" height="500" style="margin: 10px;"/>
+<div class="body">
+    <img src={src} alt="LOL"/>
         <div class="text">
             <div class="title">
                 {header}
@@ -15,24 +14,21 @@
                 {body}
             </div>
         </div>
-    </div>
-</body>
+</div>
 
 <style>
-    body {
-        box-sizing: border-box;
+    .body {
         display: flex;
+        flex-direction: column;
+        width: 25vw;
+        height: 50vh;
+        margin-top: 10px;
+        background-image: url("https://assets.lightspeedhq.com/img/2019/07/bd804558-martin-widenka-tkfrspt-jdk-unsplash-min.jpg");
     }
 
-    .recipe {
-        margin: 10px;
-        display: flex;
-        flex-direction: row;
-        border-radius: 10px;
-        border-width: 2px;
-        border-color: #D0585890;
-        border-style: solid;
-        width: 75vw;
+    img {
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .title {

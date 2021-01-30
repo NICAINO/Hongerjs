@@ -1,60 +1,89 @@
 <script>
 	import Recipe from './Recipe.svelte'
-	import { url } from '@roxi/routify'
+	import { goto } from '@roxi/routify'
+	import Break from '../../components/Break.svelte'
 </script>
 
-<body>
+<div class="body">
+
 	<div class="header">
-		<h1>VOMB</h1>
+		<p class="headerTitle">Vo-edsel</p>
+		<div class="menu">
+			<button class="button" on:click={() => $goto('../signin')}>
+				<p>Sign in</p>
+			</button>
+			<button class="button" on:click={() => $goto('../signup')}>
+				<p>Sign up</p>
+			</button>
+		</div>
 	</div>
+	
 	<div class="main">
-		<div>
-			<a href={$url('./vomb')}>VoorbeeldLink</a>
-			<Recipe
-				header={"Snack: Madison Beer"}
-				body={"Een kanker boeiend verhaal over madison beer... Grapje ze is gewoon lekker"}
-				src={"https://i.dailymail.co.uk/1s/2020/12/15/01/36848506-0-image-a-77_1607996735722.jpg"}
-			/>
-		</div>
-		<div>
-			<Recipe
-				header={"Titel van recept"}
-				body={"Body text body text body text body text body text"}
-				src={"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cardi-b-reebok-1605107359.jpg"}
-			/>
-		</div>
-		<div>
-			<Recipe
-				header={"Snack: Ariana Grande"}
-				body={"Ariana is hier niet de echte snack. ZIj lijkt op Cardi B. De echte snack is Darion natuurlijk"}
-				src={"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2020-11-17-at-12-58-32-pm-1605639574.png"}
-			/>
-		</div>
+		<p class="title">Recepten van de dag</p>
+		<Break/>
+		<Recipe
+			header="VOMBER"
+			body="Goed lichaam"
+		/>
 	</div>
-</body>
+
+</div>
 
 <style>
-	body {
+	.body {
 		box-sizing: border-box;
+		display: flex;
+		margin: 0px;
+		flex-direction: column;
+		background-color: #f8f8f8;
+	}
+
+	.body > * {
+		flex: 1 100%;
 	}
 
 	.header {
-		background-color: #D0585890 ;
-		padding: 30px;
+		background-color: #56a75680 ;
+	}
+
+	p.headerTitle {
+		color: #f8f8f8;
+		font-size: 4em;
+		font-weight: 300;
 		text-align: center;
-		color: antiquewhite;
+		font-family: Cambria;
+	}
+
+	.menu {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+	}
+
+	.button {
+		margin: 5px;
+		background-color: #56a75680;
+		padding: 5px;
+		border-radius: 5px;
 	}
 
 	.main {
+		background-color: #f8f8f8;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 	}
 
-	h1 {
-		color: #F7F7F7;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
+	p.title {
+		font-size: 2em;
+		font-weight: 300;
+		text-align: center;
+		font-family: Cambria;
+		margin: 5px;
 	}
+
+	p {
+		margin: 0px;
+	}
+	
 </style>
